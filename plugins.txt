@@ -1,0 +1,4 @@
+authorize-project:1.4.0
+job-dsl:1.78.1
+git:4.10.0
+workflow-job
