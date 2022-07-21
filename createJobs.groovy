@@ -1,3 +1,20 @@
+
+
+pipelineJob('customer-app-deploy') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url 'https://github.com/tiggomark/customer-app.git'
+                    }
+                    branch 'master'
+                }
+            }
+        }
+    }
+}
+
 pipelineJob('pipelineJobXXX') {
     definition {
         cps {
@@ -15,3 +32,4 @@ pipelineJob('pipelineJob 2') {
         }
     }
 }
+
