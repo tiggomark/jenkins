@@ -2,4 +2,4 @@ authorize-project:1.4.0
 job-dsl:1.78.1
 git:4.10.0
 workflow-job
-workflow-cps:2746.v0da_83a_332669
+workflow-cps
