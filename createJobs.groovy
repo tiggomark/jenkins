@@ -1,4 +1,50 @@
 
+pipelineJob('config-app-deploy') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url 'https://github.com/tiggomark/app-config-server.git'
+                    }
+                    branch 'master'
+                }
+            }
+        }
+    }
+}
+
+pipelineJob('api-gateway-app-deploy') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url 'https://github.com/tiggomark/api-gateway-app.git'
+                    }
+                    branch 'master'
+                }
+            }
+        }
+    }
+}
+
+pipelineJob('eureka-server-app-deploy') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url 'https://github.com/tiggomark/eureka-server-app.git'
+                    }
+                    branch 'master'
+                }
+            }
+        }
+    }
+}
+
+
 
 pipelineJob('customer-app-deploy') {
     definition {
@@ -15,21 +61,5 @@ pipelineJob('customer-app-deploy') {
     }
 }
 
-pipelineJob('pipelineJobXXX') {
-    definition {
-        cps {
-            script(readFileFromWorkspace('pipelineJob.groovy'))
-            sandbox()
-        }
-    }
-}
 
-pipelineJob('pipelineJob 2') {
-    definition {
-        cps {
-            script(readFileFromWorkspace('pipelineJob2.groovy'))
-            sandbox()
-        }
-    }
-}
 
