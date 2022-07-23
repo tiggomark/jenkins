@@ -61,5 +61,20 @@ pipelineJob('customer-app-deploy') {
     }
 }
 
+pipelineJob('database-app-deploy') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url 'https://github.com/tiggomark/database-app.git'
+                    }
+                    branch 'master'
+                }
+            }
+        }
+    }
+}
+
 
 
