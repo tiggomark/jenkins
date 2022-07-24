@@ -18,7 +18,7 @@ pipelineJob("$CLUSTER_COMMON_FOLDER/config-app-deploy") {
     }
 }
 
-pipelineJob('api-gateway-app-deploy') {
+pipelineJob("$CLUSTER_COMMON_FOLDER/api-gateway-app-deploy") {
     definition {
         cpsScm {
             scm {
@@ -33,13 +33,28 @@ pipelineJob('api-gateway-app-deploy') {
     }
 }
 
-pipelineJob('eureka-server-app-deploy') {
+pipelineJob("$CLUSTER_COMMON_FOLDER/eureka-server-app-deploy") {
     definition {
         cpsScm {
             scm {
                 git {
                     remote {
                         url 'https://github.com/tiggomark/eureka-server-app.git'
+                    }
+                    branch 'master'
+                }
+            }
+        }
+    }
+}
+
+pipelineJob("$CLUSTER_COMMON_FOLDER/database-app-deploy") {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url 'https://github.com/tiggomark/database-app.git'
                     }
                     branch 'master'
                 }
@@ -66,20 +81,7 @@ pipelineJob('customer-app-deploy') {
     }
 }
 
-pipelineJob('database-app-deploy') {
-    definition {
-        cpsScm {
-            scm {
-                git {
-                    remote {
-                        url 'https://github.com/tiggomark/database-app.git'
-                    }
-                    branch 'master'
-                }
-            }
-        }
-    }
-}
+
 
 
 
