@@ -52,6 +52,7 @@ pipelineJob('customer-app-deploy') {
             scm {
                 git {
                     remote {
+                        credentials 'github'
                         url 'https://github.com/tiggomark/customer-app.git'
                     }
                     branch 'master'
