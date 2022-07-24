@@ -1,5 +1,9 @@
-def clusterCommonFolder = "CLUSTER-COMMON"
-pipelineJob('${clusterCommonFolder}/config-app-deploy') {
+CLUSTER_COMMON_FOLDER = "CLUSTER-COMMON"
+
+folder("$CLUSTER_COMMON_FOLDER") {
+    description('Pasta com todos os jobs comuns do cluster')
+}
+pipelineJob("$CLUSTER_COMMON_FOLDER/config-app-deploy") {
     definition {
         cpsScm {
             scm {
