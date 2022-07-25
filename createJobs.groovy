@@ -64,6 +64,23 @@ pipelineJob("$CLUSTER_COMMON_FOLDER/database-app-deploy") {
 }
 
 
+pipelineJob('infra-up') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        credentials 'github'
+                        url 'https://github.com/tiggomark/infra-jobs.git'
+                    }
+                    branch 'master'
+                }
+            }
+        }
+    }
+}
+
+
 
 pipelineJob('customer-app-deploy') {
     definition {
@@ -77,6 +94,7 @@ pipelineJob('customer-app-deploy') {
                     branch 'master'
                 }
             }
+            scriptPath("jenkisTest")
         }
     }
 }
