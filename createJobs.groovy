@@ -94,8 +94,9 @@ pipelineJob('customer-app-deploy') {
                     branch 'master'
                 }
             }
-            scriptPath("jenkisTest")
+
         }
+        scriptPath("jenkisTest")
     }
 }
 
