@@ -76,6 +76,7 @@ pipelineJob('infra-up') {
                     branch 'master'
                 }
             }
+            scriptPath("infraUpJenkins")
         }
     }
 }
@@ -94,7 +95,7 @@ pipelineJob('customer-app-deploy') {
                     branch 'master'
                 }
             }
-            scriptPath("jenkisTestxx")
+
         }
 
     }
