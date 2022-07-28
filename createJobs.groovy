@@ -71,7 +71,6 @@ pipelineJob("$CLUSTER_COMMON_FOLDER/elastic-search-deploy") {
             scm {
                 git {
                     remote {
-                        credentials 'github'
                         url 'https://github.com/tiggomark/elastic-search.git'
                     }
                     branch 'master'
