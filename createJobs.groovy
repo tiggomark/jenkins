@@ -64,6 +64,24 @@ pipelineJob("$CLUSTER_COMMON_FOLDER/database-app-deploy") {
 }
 
 
+
+pipelineJob("$CLUSTER_COMMON_FOLDER/elastic-search-deploy") {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url 'https://github.com/tiggomark/elastic-search.git'
+                    }
+                    branch 'master'
+                }
+            }
+        }
+    }
+}
+
+
+
 pipelineJob('infra-up') {
     definition {
         cpsScm {
